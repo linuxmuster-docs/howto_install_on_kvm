@@ -25,8 +25,44 @@ Remoteverbindung herstellen
 ===========================
    
 Stellen Sie fest, ob Sie sich mit dem Benutzer vom Administrations-PC
-aus auf dem Host-PC einloggen können:
+aus auf dem Host-PC einloggen können und kopieren Sie sinnvollerweise
+einen Public-Key (hier: ``.ssh/id_ecdsa.pub``) dorthin:
 
-.. code-block: console
+.. code-block:: console
 
+   user@admin-pc~$ ssh serverhost -l linuxadmin
+   linuxadmin@serverhost's password:xxxxx
+   Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-31-generic x86_64)
+   ...
+   Last login: Tue Jul 19 10:45:28 2016 from 10.16.1.20
+   linuxadmin@serverhost~$ logout
+   user@admin-pc~$ ssh-copy-id -i .ssh/id_ecdsa.pub linuxadmin@serverhost:
+   linuxadmin@serverhost's password:
    
+   Number of key(s) added: 1
+   
+   Now try logging into the machine, with:   "ssh 'linuxadmin@serverhost'"
+   and check to make sure that only the key(s) you wanted were added.
+   user@admin-pc~$ ssh serverhost -l linuxadmin
+   Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-31-generic x86_64)
+   ...
+   Last login: Tue Jul 19 10:45:28 2016 from 10.16.1.20
+   linuxadmin@serverhost~$
+		
+Virt-manager starten
+====================
+
+Starten Sie virt-manager. Im Menü unter Datei -> Verbindung hinzufügen
+füllen Sie das Dialogfenster aus
+
+.. figure:: media/virt-manager.addhost.png
+
+   Hinzufügen des Serverhosts
+	    
+   * Anwählen von "Mit entferntem Rechner verbinden",
+   * Benutzername: ``linuxadmin``,
+   * Rechnername: ``serverhost``,
+   * Anwählen von "Automatische Verbindung"    
+
+und klicken auf "Verbinden".
+

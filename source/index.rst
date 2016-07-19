@@ -6,5 +6,8 @@
 linuxmuster.net auf einem KVM Host installieren
 ===============================================
 
+.. toctree::
+   :maxdepth: 2
+
    preparehost
    prepareadminpc
