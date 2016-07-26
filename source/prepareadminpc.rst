@@ -64,5 +64,14 @@ füllen Sie das Dialogfenster aus
    * Rechnername: ``serverhost``,
    * Anwählen von "Automatische Verbindung"    
 
-und klicken auf "Verbinden".
+und klicken auf "Verbinden". 
 
+Linuxmuster.net installieren
+============================
+
+Um linuxmuster.net zu installieren, benötigen Sie mindestens zwei
+virtuelle Maschinen: eine für die Firewall IPFire und eine für den
+Server.
+
+Zwei Alternativen: Neuinstallation von Grund auf und Import der
+virtuellen Maschinen.
